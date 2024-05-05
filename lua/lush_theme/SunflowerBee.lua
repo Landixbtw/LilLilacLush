@@ -72,10 +72,10 @@ local theme = lush(function(injected_functions)
 		-- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
 		--CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		-- Directory      { }, -- Directory names (and other special names in listings)
-		DiffAdd({ bg = theme.diff.add }), -- Diff mode: Added line |diff.txt|
-		DiffChange({ bg = theme.diff.change }), -- Diff mode: Changed line |diff.txt|
-		DiffDelete({ fg = theme.vsc.removed, bg = theme.diff.delete }), -- Diff mode: Deleted line |diff.txt|
-		DiffText({ bg = theme.diff.text }), -- Diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd({ bg = theme.winterGreen }), -- Diff mode: Added line |diff.txt|
+		DiffChange({ bg = theme.winterYellow }), -- Diff mode: Changed line |diff.txt|
+		DiffDelete({ fg = theme.vsc.removed, bg = theme.winterRed }), -- Diff mode: Deleted line |diff.txt|
+		DiffText({ bg = theme.winterBlue }), -- Diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer({ fg = hsl(340, 90, 80) }), -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		TermCursor({ fg = hsl(0, 100, 100) }), -- Cursor in a focused terminal
 		-- TermCursorNC   { }, -- Cursor in an unfocused terminal
