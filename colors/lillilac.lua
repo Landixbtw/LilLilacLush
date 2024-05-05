@@ -7,7 +7,7 @@ local colors = {
 	NormalFloat = { fg = "#C4C5E9", bg = "None" },
 	Boolean = { fg = "#765673" },
 	Character = { fg = "#C4C5E9" },
-	Comment = { fg = "#624E6E", gui = "italic" },
+	Comment = { fg = "#624E6E" },
 	Conditional = { fg = "#B440D4" },
 	Constant = { fg = "#B657FF" },
 	CursorLine = { bg = "#18193F" },
