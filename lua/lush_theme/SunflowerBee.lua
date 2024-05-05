@@ -44,12 +44,12 @@
 
 local lush = require("lush")
 local hsl = lush.hsl
-
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
 local theme = lush(function(injected_functions)
 	local sym = injected_functions.sym
+	local colors = require("colors.lillilac")
 	return {
 		-- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
 		-- groups, mostly used for styling UI elements.
@@ -72,10 +72,10 @@ local theme = lush(function(injected_functions)
 		-- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
 		--CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		-- Directory      { }, -- Directory names (and other special names in listings)
-		DiffAdd({ bg = theme.winterGreen }), -- Diff mode: Added line |diff.txt|
-		DiffChange({ bg = theme.winterYellow }), -- Diff mode: Changed line |diff.txt|
-		DiffDelete({ fg = theme.vsc.removed, bg = theme.winterRed }), -- Diff mode: Deleted line |diff.txt|
-		DiffText({ bg = theme.winterBlue }), -- Diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd({ colors.winterGreen }), -- Diff mode: Added line |diff.txt|
+		DiffChange({ colors.winterYellow }), -- Diff mode: Changed line |diff.txt|
+		DiffDelete({ colors.vsc.removed, bg = colors.winterRed }), -- Diff mode: Deleted line |diff.txt|
+		DiffText({ bg = colors.winterBlue }), -- Diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer({ fg = hsl(340, 90, 80) }), -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		TermCursor({ fg = hsl(0, 100, 100) }), -- Cursor in a focused terminal
 		-- TermCursorNC   { }, -- Cursor in an unfocused terminal
