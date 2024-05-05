@@ -72,10 +72,10 @@ local theme = lush(function(injected_functions)
 		-- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
 		--CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		-- Directory      { }, -- Directory names (and other special names in listings)
-		-- DiffAdd        { }, -- Diff mode: Added line |diff.txt|
-		-- DiffChange     { }, -- Diff mode: Changed line |diff.txt|
-		-- DiffDelete     { }, -- Diff mode: Deleted line |diff.txt|
-		-- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd({}), -- Diff mode: Added line |diff.txt|
+		DiffChange({}), -- Diff mode: Changed line |diff.txt|
+		DiffDelete({}), -- Diff mode: Deleted line |diff.txt|
+		DiffText({}), -- Diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer({ fg = hsl(340, 90, 80) }), -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		TermCursor({ fg = hsl(0, 100, 100) }), -- Cursor in a focused terminal
 		-- TermCursorNC   { }, -- Cursor in an unfocused terminal
@@ -83,8 +83,7 @@ local theme = lush(function(injected_functions)
 		-- VertSplit      { }, -- Column separating vertically split windows
 		-- Folded         { }, -- Line used for closed folds
 		-- FoldColumn     { }, -- 'foldcolumn'
-		SignColumn({--[[ bg = "None" ]]
-		}), -- Column where |signs| are displayed
+		SignColumn({}), -- Column where |signs| are displayed
 		-- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		-- Substitute     { }, -- |:substitute| replacement text highlighting
 		LineNr({ fg = hsl(340, 90, 80) }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
